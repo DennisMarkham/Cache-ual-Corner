@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../assets/css/reset.css" type="text/css" />
+		<link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+		<title>Chat Room</title>
+		<link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png"/>
+	</head>
+
+	<body>
+		<div class="modal">
+			<div class="modalBackground"></div>
+			
+			<div class="modalForeground">
+				<div id="hideModal">
+					<p>&#x274C;</p>
+				</div>
+
+				<div id="modalContent"></div>
+			</div>
+		</div>
+
+		<div class="chatWrapper">
+			<div class="chatElement" id="header">
+				<h1>h1: Our Website Name</h1>
+
+				<div id="loginArea">
+					<input type="text" placeholder="User Name">
+					<input type="text" placeholder="User Password">
+					<button name="login" type="submit">Log in</button>
+					<br>
+					<a href="#">a: I need to create an account</a>
+				</div>
+			</div>
+
+			<div class="chatElement" id="sideBar">
+				<h2>h2: Users</h2>
+				<div id="userList">
+					<ul>
+						<li>li: User one</li>
+						<li>li: User two</li>
+						<li>li: User three</li>
+					</ul>
+				</div>
+
+				<h2>h2: Chatrooms</h2>
+				<div id="roomList">
+					<ul>
+						<li>li: Room one</li>
+						<li>li: Room two</li>
+						<li>li: Room three</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="chatElement" id="chatArea">
+				<div id="chatName">
+					<h2>h2: Chatroom Name</h2>
+				</div>
+				
+				<div id="chatMessages">
+					<div class="chatMessage">
+						<h3>h3: User name: </h3>
+						<p>p: This is a chat message</p>
+						<h6>h6: Time stamp</h6>
+					</div>
+
+					<div class="chatMessage">
+						<h3>h3: User name: </h3>
+						<p>p: This is a chat message</p>
+						<h6>h6: Time stamp</h6>
+					</div>
+
+					<div class="chatMessage">
+						<h3>h3: User name: </h3>
+						<p>p: This is a chat message</p>
+						<h6>h3: Time stamp</h6>
+					</div>
+				</div>
+			</div>
+
+			<div class="chatElement" id="userArea">
+				<div id="chatInput">
+					<input type="text" size="100">
+					<button name="textSubmit" type="submit">Submit</button>
+				</div>
+				<div id="userInfo">
+					<img src="../assets/img/testAvatar.png" />
+
+					<h3>h3: Username</h3>
+
+					<div id="settingsModal">
+						<h6>h6: Settings</h6>
+					</div>
+
+					<div id="skinModal">
+						<h6>h6: Change skin</h6>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<script src="https://code.jquery.com/jquery.js"></script>
+			<script src="../assets/javascript/main.js"></script>
+		</footer>
+	</body>
+
+</html>
