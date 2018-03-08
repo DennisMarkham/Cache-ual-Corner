@@ -19,3 +19,5 @@ $(".modalBackground").on("click", function() {
 $("#hideModal").on("click", function() {
 	$(".modal").hide();
 });
+
+

@@ -22,7 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Static directory
-app.use(express.static("public"));
+//app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 //handlebars default layout - main
 var exphbs = require("express-handlebars");
@@ -32,13 +33,27 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-require("./routes/api-routes.js")(app);
+require("./routes/chat-api-routes.js")(app);
+require("./routes/login-api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Starts the server to begin listening
 // =============================================================
 
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    
+    io.emit('chat message', msg);
+
+  });
+});
+
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+  http.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
 });
