@@ -50,7 +50,11 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
 
   });
+  socket.on('end', function (){
+    socket.disconnect(0);
 });
+});
+
 
 db.sequelize.sync().then(function() {
   http.listen(PORT, function() {
