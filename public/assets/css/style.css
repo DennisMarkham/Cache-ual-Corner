@@ -52,7 +52,6 @@
 
 /*chat container*/
 	.chatWrapper {
-		background: purple;
 		min-height: 100vh;
 		display: grid;
 		grid-template-rows: 1fr 5fr 20vh;
@@ -71,7 +70,6 @@
 	}
 
 	#header {
-		background: green;
 		grid-area: header;
 		display: flex;
 		justify-content: space-between;
@@ -84,12 +82,10 @@
 	}
 
 	#sideBar {
-		background: yellow;
 		grid-area: sidebar;
 	}
 
 	#chatArea {
-		background: blue;
 		grid-area: chatarea;
 	}
 
@@ -99,7 +95,6 @@
 	}
 
 	#userArea {
-		background: red;
 		grid-area: userarea;
 		display: flex;
 		justify-content: space-around;
