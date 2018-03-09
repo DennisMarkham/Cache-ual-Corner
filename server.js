@@ -50,9 +50,9 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
 
   });
-  socket.on('end', function (){
+  /*socket.on('end', function (){
     socket.disconnect(0);
-});
+});*/
 });
 
 
