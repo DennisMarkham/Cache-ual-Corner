@@ -25,6 +25,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     message_color : DataTypes.INTEGER
 
+  }, {
+    timestamps: false
   });
 
   Login.associate = function(models) {

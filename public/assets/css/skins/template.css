@@ -1,0 +1,99 @@
+/*BODY ELEMENTS*/
+
+	/*'global' effects here i.e. full body background, font styles, etc.*/
+	body {
+
+	}
+
+	/*All the different pieces that make up the page, you can set 'global' borders here etc.*/
+	.chatWrapper {
+
+	}
+
+/**/
+
+/*CHAT ELEMENTS*/
+
+	/*Header area*/
+		#header {
+
+		}
+
+		#loginArea {
+
+		}
+
+	/*Sidebar area*/
+		#sideBar {
+
+		}
+
+		#userList {
+
+		}
+
+		#roomList {
+
+		}
+
+	/*Chat area*/
+		#chatArea {
+
+		}
+
+		#chatName {
+
+		}
+
+		#chatMessages {
+
+		}
+
+		.chatMessage {
+
+		}
+
+	/*User area*/
+		#userArea {
+
+		}
+
+		#chatInput {
+
+		}
+
+		#userInfo {
+
+		}
+
+/**/
+
+/*Font and image styles*/
+
+		h1 {
+
+		}
+
+		h2 {
+
+		}
+
+		h3 {
+
+		}
+
+		h6 {
+
+		}
+
+		p {
+
+		}
+
+		a {
+
+		}
+
+		img {
+
+		}

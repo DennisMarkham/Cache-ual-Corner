@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<!-- <link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> -->
+		<link rel="stylesheet" href="/assets/css/skins/dennisDefault.css" type="text/css" />
 		<title>Chat Room</title>
 		<link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png"/>
 	</head>
@@ -28,7 +29,9 @@
 				<div id="loginArea">
 					<input type="text" placeholder="User Name">
 					<input type="text" placeholder="User Password">
-					<button name="login" type="submit">Log in</button>
+					<button id="btnLogin" type="submit">Log in</button>
+					<button id="btnLogout" type="submit">Log out</button>
+					
 					<br>
 					<a href="#">a: I need to create an account</a>
 				</div>
@@ -55,40 +58,22 @@
 			</div>
 
 			<div class="chatElement" id="chatArea">
-				<div id="chatName">
-					<h2>h2: Chatroom Name</h2>
-				</div>
+				<!-- <div id="chatName">
+					<h2>Chatroom</h2>
+				</div> -->
 				
 				<div id="chatMessages">
 					<div class="chatMessage">
-						<h3>h3: User name: </h3>
-						<ul id="messages"></ul>
-						<h6>h6: Time stamp</h6>
+						<h5 id="messages"></h5>
 					</div>
-
-					<!-- <div class="chatMessage">
-						<h3>h3: User name: </h3>
-						<p>p: This is a chat message</p>
-						<h6>h6: Time stamp</h6>
-					</div>
-					
-					<div class="chatMessage">
-						<h3>h3: User name: </h3>
-						<p>p: This is a chat message</p>
-						<h6>h3: Time stamp</h6>
-					</div> -->
 				</div>
 			</div>
 
 			<div class="chatElement" id="userArea">
 				<div id="chatInput">
-					<form action="">
-				      <input id="m" autocomplete="off" />
-				      <!-- type="text" size="100"
-				      name="textSubmit" type="submit"-->
-				      <button >Send</button>
-				  </form>
-			    </div>
+					<input id="m" autocomplete="off" type="text" size="100"/>
+				     <button id="btnSend">Send</button>
+				 </div>
 			
 				<div id="userInfo">
 					<img src="/assets/img/testAvatar.png" />
@@ -108,29 +93,10 @@
 		</div>
 
 		<footer>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-    
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>    
 			<script src="https://code.jquery.com/jquery.js"></script>
 			<script src="/assets/javascript/main.js"></script>
-			<script>
-
-		      $(function () {
-		        var socket = io();
-		        $('form').submit(function(){
-		          socket.emit('chat message', $('#m').val());
-		          $('#m').val('');
-		          return false;
-		        });
-		        socket.on('chat message', function(msg){
-		          $('#messages').append($('<li>').text(msg));
-		          window.scrollTo(0, document.body.scrollHeight);
-		        });
-
-		        //socket.emit('end');
-  
-		      });
-    
-			</script>
+			<script src="/assets/javascript/chat.js"></script>
 		</footer>
 	</body>
 
