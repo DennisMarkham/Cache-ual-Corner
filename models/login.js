@@ -1,6 +1,11 @@
 var bcrypt = require("bcrypt-nodejs");
+var passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
 
-module.exports = function(sequelize, DataTypes) {
+var db = require("../models");
+
+module.exports = function(sequelize, DataTypes) 
+{
   var Login = sequelize.define("Login", {
   	
     email: {
@@ -44,5 +49,7 @@ module.exports = function(sequelize, DataTypes) {
 
 
   return Login;
+
 };
+
 
