@@ -4,8 +4,8 @@
   "description": "Cache-ual-Corner is a chat room app where users communicate with one another through text-based messages.",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.18.2",
     "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "mysql": "^2.15.0",
