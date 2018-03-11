@@ -45,14 +45,16 @@ var io = require('socket.io')(http);
 
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    
+	//console.log('user connected ' +socket.id);
+    socket.on('chat message', function(msg){    
     io.emit('chat message', msg);
 
   });
-  /*socket.on('end', function (){
-    socket.disconnect(0);
-});*/
+    
+ socket.on('disconnect', function(){
+   // console.log(socket.id + '   user disconnected');
+  });
+
 });
 
 
@@ -61,3 +63,5 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+//{ force: true }

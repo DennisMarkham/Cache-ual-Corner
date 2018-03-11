@@ -5,8 +5,10 @@ module.exports = function(app) {
 	app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
   });
+
+	app.get("/api/new", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/html/index.html"));
+  });
 };
-
-
 
 
