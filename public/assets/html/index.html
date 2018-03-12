@@ -2,11 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="../css/reset.css" type="text/css" />
-		<link rel="stylesheet" href="../css/skins/dennisDefault.css" type="text/css" />
+		<link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<!--jquery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<title>Chat Room</title>
 		<link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png"/>
 	</head>
+	<!--logon testing-->
+	<nav class=“navbar navbar-default”>
+
+     <a class=“navbar-brand” href=“/logout”>
+       Logout
+     </a>
+
+</nav>
+<!--end of logout testing-->
 
 	<body>
 		<div class="modal">
@@ -24,16 +35,30 @@
 		<div class="chatWrapper">
 			<div class="chatElement" id="header">
 				<h1>h1: Our Website Name</h1>
-
+<!-- login in area -->
+	<form class="login">
 				<div id="loginArea">
-					<input type="text" placeholder="User Name">
-					<input type="text" placeholder="User Password">
-					<button id="btnLogin" type="submit">Log in</button>
-					<button id="btnLogout" type="submit">Log out</button>
-					
-					<br>
-					<a href="#">a: I need to create an account</a>
-				</div>
+
+                    <input id="usernameLogin" type="text" placeholder="User Name">
+                    <input id="passwordLogin" type="text" placeholder="User Password">
+                    <button name="loginSubmit" type="submit">Log in</button>
+                </div>
+	</form>
+
+                    <br>
+                    <form class="signup">
+                    <a href="#">a: I need to create an account</a>
+					<br>create an acct!
+					<input id="newName" type="text" placeholder="userName">
+					<input id="newEmail" type="email" placeholder="email">
+                    <input id="newPw" type="text" placeholder="Password">
+                 
+                    <button name="newAcct" type="submit">create new account</button>
+
+            
+            </form>
+<!-- login testing end -->
+
 			</div>
 
 			<div class="chatElement" id="sideBar">
@@ -75,7 +100,7 @@
 				 </div>
 			
 				<div id="userInfo">
-					<img src="../img/testAvatar.png" />
+					<img src="/assets/img/testAvatar.png"/>
 
 					<h3>h3: Username</h3>
 
