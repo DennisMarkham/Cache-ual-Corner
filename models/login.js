@@ -29,7 +29,7 @@ module.exports = function(sequelize, DataTypes)
     avatar_image: {
     	type: DataTypes.BLOB('tiny')
     },
-    message_color : DataTypes.INTEGER
+    message_color : DataTypes.STRING
 
   }, {
     timestamps: false
@@ -46,6 +46,7 @@ module.exports = function(sequelize, DataTypes)
   Login.hook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
+
   return Login;
 
 // In order to help keep authentication state across HTTP requests,

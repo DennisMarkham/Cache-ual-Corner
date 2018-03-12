@@ -28,7 +28,7 @@ $(document).ready(function() {
   var passwordInput = $("input#newPw");
   var newUser = $("input#newName");
   var avatar ="defaultimg";
-  var messageColor="000000";
+  var messageColor="ffffff";
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) 
@@ -63,7 +63,7 @@ $(document).ready(function() {
     // Does a post to the signup route. If succesful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password, username, avatar, messagecolor) {
-    $.post("/api/signup", {
+    $.post("/api/loginList", {
       email: email,
       password: password,
       userName:username,
@@ -71,9 +71,15 @@ $(document).ready(function() {
       message_color: messagecolor
     }).then(function(data) {
     	//security so user cannot go back to view previous history
-      window.location.replace(data);
+      //window.location.replace(data);
       // If there's an error, handle it by throwing up a boostrap alert
-    }).catch(handleLoginErr);
+    })//.catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) 
+  {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
 
 /*

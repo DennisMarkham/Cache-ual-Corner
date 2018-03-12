@@ -26,7 +26,7 @@ module.exports = function(app)
   });
 
  	    // Route for signing up a user. 
-  app.post("/api/signup", function(req, res) 
+  app.post("/api/loginList", function(req, res) 
   {
     db.Login.create(
     {
