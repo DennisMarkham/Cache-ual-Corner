@@ -70,6 +70,7 @@ $(document).ready(function() {
       avatar_image:avatar,
       message_color: messagecolor
     }).then(function(data) {
+    	//security so user cannot go back to view previous history
       window.location.replace(data);
       // If there's an error, handle it by throwing up a boostrap alert
     }).catch(handleLoginErr);
