@@ -14,7 +14,7 @@ module.exports = function(app) {
     });
   });
 
-  // Get all username for the socketid
+  // Get userid for the username
   app.get("/api/user/:userName", function(req, res) {
     db.Login.findOne({attributes : ['id'],
       where: {
