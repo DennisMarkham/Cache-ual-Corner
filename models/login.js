@@ -1,4 +1,6 @@
 var bcrypt = require("bcrypt-nodejs");
+var passport = require("passport");
+var LocalStrategy = require("passport-local").Strategy;
 
 module.exports = function(sequelize, DataTypes) {
   var Login = sequelize.define("Login", {
@@ -23,7 +25,12 @@ module.exports = function(sequelize, DataTypes) {
     avatar_image: {
     	type: DataTypes.BLOB('tiny')
     },
-    message_color : DataTypes.INTEGER
+    message_color : DataTypes.STRING,
+
+    logged: {
+      type: DataTypes.BOOLEAN, 
+      defaultValue:false
+    }
 
   }, {
     timestamps: false
@@ -46,5 +53,19 @@ module.exports = function(sequelize, DataTypes) {
 
 
   return Login;
+  // In order to help keep authentication state across HTTP requests,
+// Sequelize needs to serialize and deserialize the user
+// Just consider this part boilerplate needed to make it all work
+passport.serializeUser(function(user, cb) {
+  cb(null, user);
+});
+
+passport.deserializeUser(function(obj, cb) {
+  cb(null, obj);
+});
 };
+// Exporting our configured passport
+//module.exports = passport;
+
+
 

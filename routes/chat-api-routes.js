@@ -14,15 +14,25 @@ module.exports = function(app) {
     });
   });
 
+  // Get all username for the socketid
+  app.get("/api/user/:userName", function(req, res) {
+    db.Login.findOne({attributes : ['id'],
+      where: {
+        userName: req.params.userName,
+        logged: true
+      }
+    }).then(function(user) {
+      res.json(user);
+    });
 
+  });
 
 	// Add a chat row
-  app.post("/api/new", function(req, res) {
+  app.post("/api/newChat", function(req, res) {
     console.log("chat Data: " + req.body.time);
    
     db.Chat.create({
-      socket_id: req.body.socket_id,
-      LoginId: req.body.user,
+      LoginId: req.body.id,
       chat_messages: req.body.msg,
       chat_time:req.body.time 
     });

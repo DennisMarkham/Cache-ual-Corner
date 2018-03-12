@@ -13,6 +13,9 @@ var db = require("./models");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+//var socketUsers = require('socket.io.users');
 
 // Sets up the Express app to handle data parsing
 
@@ -26,10 +29,10 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 //handlebars default layout - main
-var exphbs = require("express-handlebars");
+/*var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.set("view engine", "handlebars");*/
 
 // Routes
 // =============================================================
@@ -40,28 +43,23 @@ require("./routes/html-routes.js")(app);
 // Starts the server to begin listening
 // =============================================================
 
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+db.sequelize.sync().then(function() {
+  server.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+
+    });
+});
 
 
-io.on('connection', function(socket){
-	//console.log('user connected ' +socket.id);
-    socket.on('chat message', function(msg){    
+io.on('connection', function(socket){    
+    console.log('user connected ' +socket.id);
+   socket.on('chat message', function(msg){    
     io.emit('chat message', msg);
 
   });
-    
+
  socket.on('disconnect', function(){
-   // console.log(socket.id + '   user disconnected');
-  });
+        console.log('user disconnected   ' + socket.id);
+    });
 
 });
-
-
-db.sequelize.sync().then(function() {
-  http.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-});
-
-//{ force: true }

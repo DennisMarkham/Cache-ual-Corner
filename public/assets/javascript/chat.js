@@ -1,37 +1,68 @@
+var socket;
+$('#btnLogin').on("click",function(){
+  event.preventDefault();
+  var username = $("#userName").val().trim();
+
+  socket = io.connect("http://localhost:8080/", {'forceNew': true});
+  console.log("conected " +socket.id);
+  sessionStorage.clear();
+  sessionStorage.setItem("Cache-ual-Corner", username);
+
+});
+
+     
 
 $(function () {
-      var socket = io();
+       
+      //var socket = io() ;
+      //var socket = io.connect("http://localhost:8080/", {'forceNew': true});
+      //var socket =io.connect('http://localhost:8080');
       var chat_time = new Date();
+
+      $('#btnLogout').on("click",function(){
+        event.preventDefault();
+        sessionStorage.removeItem("Cache-ual-Corner");
+
+        socket.disconnect();
+
+      });
 
       $('#btnSend').on("click",function(){
 
         var chat_messages = $('#m').val();
-        var socket_id = socket.id ;  
-        var login_id ="1";      
-        var chat ={user:login_id,socket_id:socket_id,msg:chat_messages,time:chat_time};        
+        var userName = sessionStorage.getItem("Cache-ual-Corner");
+        //var socket_id = socket.id ;
 
-        //socket.set("username",username);
-       socket.emit('chat message', chat);     
-       //to store in db 
-        $.post("/api/new", chat)
-        // On success, run the following code
-        .then(function(data) {
-          // Log the data we found
-          console.log("chat row inserted");
-        });
+        $.get("/api/user/" + userName, function(data) {  
         
-        $('#m').val('');
-        return false;
-      });
+            //console.log("chat data  " +data.id + "," + socket_id);  
 
-      socket.on('chat message', function(msg){
-       $('#messages').append("<p>" + msg.socket_id + "  " + msg.msg+ "   " + msg.time + "</p>");
-        window.scrollTo(0, document.body.scrollHeight);
+            var chat ={id: data.id,user:userName,msg:chat_messages,time:chat_time};        
 
-        console.log("dateitme " +msg.time);        
-      });
+            //socket.set("username",username);
+            socket.emit('chat message', chat);     
+           //to store in db 
+            $.post("/api/newChat", chat)
+            // On success, run the following code
+            .then(function(data) {
+              // Log the data we found
+              console.log("chat row inserted");
+            });
+            
+            $('#m').val('');
+            return false;
+          }); 
 
-      //socket.emit('end');
+
+        socket.on('chat message', function(msg){
+        $('#messages').append("<p>" + msg.user + "  " + msg.msg+ "   " + msg.time + "</p>");
+          window.scrollTo(0, document.body.scrollHeight);
+          //console.log("dateitme " +msg.time);        
+        });
+
+  });      
+
+      
 });
 
 // Make a get request to our api route that will return every chat
@@ -43,19 +74,3 @@ console.log("chat data  " +data);
     
   }
 });
-
-
-$('#btnLogin').on("click",function(){
-      console.log("logged in");
-      
-});
-
-$('#btnLogout').on("click",function(){
-      console.log("logged out");
-
-});
-
-
-
-
-
