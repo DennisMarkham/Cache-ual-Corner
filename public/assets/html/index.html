@@ -9,6 +9,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<title>Chat Room</title>
 		<link rel="shortcut icon" type="image/png" href="/assets/img/favicon.png"/>
+
+		<!-- Link to Moment.js should go here -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+		
 	</head>
 	<!--logon testing-->
 	<nav class=“navbar navbar-default”>
@@ -41,7 +46,7 @@
 				<div id="loginArea">
                     <input id="userName" type="text" placeholder="User Name">
                     <input id="passwordLogin" type="text" placeholder="User Password">
-                    <button name="btnLogin" type="submit">Log in</button>
+                    <button id="btnLogin" type="submit">Log in</button>
                     <button id="btnLogout" type="submit">Log Out</button>
                 </div>
 	</form>
@@ -66,20 +71,18 @@
 				<h2>h2: Users</h2>
 				<div id="userList">
 					<ul>
-						<li>li: User one</li>
-						<li>li: User two</li>
-						<li>li: User three</li>
+						<!-- user data -->
 					</ul>
 				</div>
 
-				<h2>h2: Chatrooms</h2>
+				<!-- <h2>h2: Chatrooms</h2>
 				<div id="roomList">
 					<ul>
 						<li>li: Room one</li>
 						<li>li: Room two</li>
 						<li>li: Room three</li>
 					</ul>
-				</div>
+				</div> -->
 			</div>
 
 			<div class="chatElement" id="chatArea">
@@ -90,6 +93,7 @@
 				<div id="chatMessages">
 					<div class="chatMessage">
 						<h5 id="messages"></h5>
+						<h5 id="currentMsg"></h5>
 					</div>
 				</div>
 			</div>

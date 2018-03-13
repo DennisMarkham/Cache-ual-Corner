@@ -53,6 +53,7 @@ db.sequelize.sync().then(function() {
 
 io.on('connection', function(socket){    
     console.log('user connected ' +socket.id);
+   
    socket.on('chat message', function(msg){    
     io.emit('chat message', msg);
 

@@ -6,11 +6,14 @@ module.exports = function(app) {
   app.get("/api/all", function(req, res) {
     
     db.Chat.findAll({attributes: ['chat_messages','chat_time'],    	
-    	include: [{model:db.Login, attributes: ['userName']}]
+    	include: [{model:db.Login, attributes: ['userName']}],
+      order: [
+            ['id', 'ASC']
+          ]
     
     }).then(function(results) {
       res.json(results);
-      console.log("results" +JSON.stringify(results));
+      //console.log("results" +JSON.stringify(results));
     });
   });
 
@@ -29,7 +32,7 @@ module.exports = function(app) {
 
 	// Add a chat row
   app.post("/api/newChat", function(req, res) {
-    console.log("chat Data: " + req.body.time);
+    //console.log("chat Data: " + req.body.time);
    
     db.Chat.create({
       LoginId: req.body.id,
@@ -49,5 +52,20 @@ module.exports = function(app) {
       }
     });
   });*/
+
+  // Get all logged users
+  app.get("/api/users", function(req, res) {
+    
+    db.Login.findAll({
+      where: {
+        logged: true
+      }
+    
+    }).then(function(results) {
+      res.json(results);
+      //console.log("results" +JSON.stringify(results));
+    });
+  });
+
 };
 
