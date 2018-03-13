@@ -1,6 +1,12 @@
 /*chat room styling*/
 	
 /*html elements*/
+
+@font-face {
+font-family: "Graffiti";
+src: url("fonts/GRAFFITICHEECKSSTYLE.otf")
+}
+
 	html {
 		min-height: 100vh;
 		color: 	hsl(0, 100%, 30%);
@@ -9,7 +15,7 @@
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(45, 100%, 65%);
+		background-image:url("../../img/brickGray.png");
 	}
 
 /*modal*/
@@ -90,6 +96,13 @@
 	#chatArea {
 		grid-area: chatarea;
 		/*background-color: white;*/
+		border-width: 20px;
+		border-style: solid;
+		/*border-image: url("../../img/brickRed.png");
+		border-image-repeat: repeat;*/
+		border-color: hsl(0, 100%, 30%);
+		margin-right: 10px;
+		background-color:hsla(0, 0%, 20%, 0.85);
 	}
 
 	.chatMessage {
@@ -132,7 +145,7 @@
 	h1 {
 		font-size: 3em;
 		color: 	hsl(0, 100%, 30%);
-		font-family: "Bauhaus 93", sans-serif;
+		font-family: "Graffiti";
 
 	}
 
@@ -140,6 +153,7 @@
 		font-size: 2em;
 		color: 	hsl(0, 100%, 30%);
 		font-family: "Bauhaus 93", sans-serif;
+
 	}
 
 	h3 {

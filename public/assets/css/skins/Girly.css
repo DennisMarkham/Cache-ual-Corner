@@ -9,7 +9,8 @@
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(45, 100%, 65%);
+
+		background-color:hsl(315, 100%, 70%);
 	}
 
 /*modal*/
@@ -89,7 +90,11 @@
 
 	#chatArea {
 		grid-area: chatarea;
-		/*background-color: white;*/
+		border-width: 20px;
+		border-style: solid;
+		border-image:url("../../img/glitter.png") 30 stretch;
+		margin-right: 10px;
+		background-color: white;
 	}
 
 	.chatMessage {
@@ -131,23 +136,23 @@
 
 	h1 {
 		font-size: 3em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 		font-family: "Bauhaus 93", sans-serif;
 
 	}
 
 	h2 {
 		font-size: 2em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 		font-family: "Bauhaus 93", sans-serif;
 	}
 
 	h3 {
 		font-size: 1.5em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 	}
 
 	h6 {
 		font-size: 0.75em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 	}

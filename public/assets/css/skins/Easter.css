@@ -3,13 +3,14 @@
 /*html elements*/
 	html {
 		min-height: 100vh;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 80%);
+		
 	}
 
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(45, 100%, 65%);
+		background-color:hsl(180, 100%, 80%);
 	}
 
 /*modal*/
@@ -89,7 +90,6 @@
 
 	#chatArea {
 		grid-area: chatarea;
-		/*background-color: white;*/
 	}
 
 	.chatMessage {
@@ -131,14 +131,14 @@
 
 	h1 {
 		font-size: 3em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 80%);
 		font-family: "Bauhaus 93", sans-serif;
 
 	}
 
 	h2 {
 		font-size: 2em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 80%);
 		font-family: "Bauhaus 93", sans-serif;
 	}
 

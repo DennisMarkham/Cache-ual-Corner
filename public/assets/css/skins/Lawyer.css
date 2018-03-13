@@ -3,13 +3,13 @@
 /*html elements*/
 	html {
 		min-height: 100vh;
-		color: 	hsl(0, 100%, 30%);
+		
 	}
 
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(45, 100%, 65%);
+		background-image: url("../../img/Mohogany1.png");
 	}
 
 /*modal*/
@@ -85,11 +85,23 @@
 
 	#sideBar {
 		grid-area: sidebar;
+		background-image:url("../../img/paper.png");
+		margin-right: 20px;
+		border-width: 10px;
+		border-style: solid;
+		border-color: hsl(40, 100%, 25%);
+		margin-right: 10px;
+
 	}
 
 	#chatArea {
+	
 		grid-area: chatarea;
-		/*background-color: white;*/
+		border-width: 20px;
+		border-style: solid;
+		border-color: hsl(40, 100%, 25%);
+		margin-right: 10px;
+		background-image:url("../../img/paper.png");
 	}
 
 	.chatMessage {
@@ -131,23 +143,26 @@
 
 	h1 {
 		font-size: 3em;
-		color: 	hsl(0, 100%, 30%);
-		font-family: "Bauhaus 93", sans-serif;
+		font-family: "French Script MT";
+		border-width: 20px;
+		border-style: outset;
+		border-color: hsl(40, 100%, 25%);
+		background-color: hsl(40, 100%, 25%);
+		text-align: center;
 
 	}
 
 	h2 {
 		font-size: 2em;
-		color: 	hsl(0, 100%, 30%);
-		font-family: "Bauhaus 93", sans-serif;
+		font-family: "French Script MT";
 	}
 
 	h3 {
 		font-size: 1.5em;
-		color: 	hsl(0, 100%, 30%);
+		
 	}
 
 	h6 {
 		font-size: 0.75em;
-		color: 	hsl(0, 100%, 30%);
+	
 	}

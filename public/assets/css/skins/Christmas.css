@@ -9,7 +9,7 @@
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(45, 100%, 65%);
+		background-color:hsl(95, 50%, 40%);
 	}
 
 /*modal*/
@@ -53,7 +53,7 @@
 	}
 
 /*chat container*/
-	.chatWrapper {
+	.chatWrapper {	
 		min-height: 100vh;
 		display: grid;
 		grid-template-rows: 1fr 5fr 20vh;
@@ -89,7 +89,12 @@
 
 	#chatArea {
 		grid-area: chatarea;
-		/*background-color: white;*/
+		border-width: 20px;
+		border-style: outset;
+		border-color: hsl(40, 100%, 40%);
+		margin-right: 10px;
+		background-image:url("../../img/parchment.jpg");
+		/*background-color:hsl(40, 100%, 90%);*/
 	}
 
 	.chatMessage {
@@ -132,14 +137,14 @@
 	h1 {
 		font-size: 3em;
 		color: 	hsl(0, 100%, 30%);
-		font-family: "Bauhaus 93", sans-serif;
+		font-family: "French Script MT";
 
 	}
 
 	h2 {
 		font-size: 2em;
 		color: 	hsl(0, 100%, 30%);
-		font-family: "Bauhaus 93", sans-serif;
+		font-family: "French Script MT";
 	}
 
 	h3 {
