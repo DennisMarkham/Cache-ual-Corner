@@ -9,7 +9,8 @@
 	body {
 		min-height: 100vh;
 		font-size: 15px;
-		background-color:hsl(95, 50%, 40%);
+
+		background-color:hsl(315, 100%, 70%);
 	}
 
 /*modal*/
@@ -53,7 +54,7 @@
 	}
 
 /*chat container*/
-	.chatWrapper {	
+	.chatWrapper {
 		min-height: 100vh;
 		display: grid;
 		grid-template-rows: 1fr 5fr 20vh;
@@ -90,11 +91,10 @@
 	#chatArea {
 		grid-area: chatarea;
 		border-width: 20px;
-		border-style: outset;
-		border-color: hsl(40, 100%, 40%);
+		border-style: solid;
+		border-image:url("../../img/glitter.png") 30 stretch;
 		margin-right: 10px;
-		background-image:url("../../img/parchment.jpg");
-		/*background-color:hsl(40, 100%, 90%);*/
+		background-color: white;
 	}
 
 	.chatMessage {
@@ -136,23 +136,23 @@
 
 	h1 {
 		font-size: 3em;
-		color: 	hsl(0, 100%, 30%);
-		font-family: "French Script MT";
+		color: 	hsl(0, 100%, 60%);
+		font-family: "Bauhaus 93", sans-serif;
 
 	}
 
 	h2 {
 		font-size: 2em;
-		color: 	hsl(0, 100%, 30%);
-		font-family: "French Script MT";
+		color: 	hsl(0, 100%, 60%);
+		font-family: "Bauhaus 93", sans-serif;
 	}
 
 	h3 {
 		font-size: 1.5em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 	}
 
 	h6 {
 		font-size: 0.75em;
-		color: 	hsl(0, 100%, 30%);
+		color: 	hsl(0, 100%, 60%);
 	}
